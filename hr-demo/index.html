@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Quản lý nhân sự - Bảng chấm công</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-container">
+    <section id="login-screen" class="screen">
+      <div class="login-card">
+        <h1>Đăng nhập hệ thống</h1>
+        <label class="form-field">
+          <span>Tên đăng nhập</span>
+          <input type="text" id="username" placeholder="Nhập tên đăng nhập">
+        </label>
+        <label class="form-field">
+          <span>Mật khẩu</span>
+          <input type="password" id="password" placeholder="Nhập mật khẩu">
+        </label>
+        <button id="login-button" class="primary-btn">Đăng nhập</button>
+      </div>
+    </section>
+
+    <section id="timesheet-screen" class="screen" hidden>
+      <header class="app-header">
+        <svg width="32" height="32" viewBox="0 0 64 64" aria-label="Logo ABC" role="img" class="logo">
+          <rect x="2" y="2" width="60" height="60" rx="8" ry="8" fill="#fff" stroke="#222"></rect>
+          <text x="50%" y="54%" text-anchor="middle" font-size="24" font-family="Segoe UI, Roboto, Arial" fill="#222">ABC</text>
+        </svg>
+        <div>
+          <h1>Công ty ABC</h1>
+          <p>Bảng chấm công</p>
+        </div>
+        <button id="logout-button" class="secondary-btn">Quay lại</button>
+      </header>
+
+      <section class="controls">
+        <div class="search-group">
+          <label for="search-input">Tìm theo tên</label>
+          <input type="text" id="search-input" placeholder="Nhập tên nhân sự">
+        </div>
+        <div class="filter-group">
+          <label for="department-filter">Lọc phòng ban</label>
+          <select id="department-filter">
+            <option value="all">Tất cả</option>
+            <option value="IT">IT</option>
+            <option value="Kế toán">Kế toán</option>
+            <option value="Nhân sự">Nhân sự</option>
+          </select>
+        </div>
+        <div class="action-group">
+          <button id="export-button" class="primary-btn">Xuất Excel</button>
+          <button id="rules-button" class="secondary-btn">Quy tắc đi trễ</button>
+        </div>
+      </section>
+
+      <section class="stats" aria-live="polite">
+        <div class="stat-card" id="stat-on-time">Đúng giờ: 0</div>
+        <div class="stat-card" id="stat-late">Đi trễ: 0</div>
+        <div class="stat-card" id="stat-absent">Vắng: 0</div>
+      </section>
+
+      <section class="table-wrapper">
+        <table id="timesheet-table">
+          <thead>
+            <tr>
+              <th>Tên</th>
+              <th>Phòng ban</th>
+              <th>Giờ vào</th>
+              <th>Giờ ra</th>
+              <th>Tổng giờ</th>
+              <th>Trạng thái</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </section>
+    </section>
+  </main>
+
+  <div id="rules-modal" class="modal" hidden>
+    <div class="modal-overlay"></div>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="rules-title">
+      <h2 id="rules-title">Quy tắc đi trễ</h2>
+      <p>Sau 08:30 được tính là Đi trễ. Quy tắc có thể thay đổi trong phiên bản sau.</p>
+      <button id="close-modal" class="primary-btn">Đóng</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

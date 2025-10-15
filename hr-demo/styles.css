@@ -1,0 +1,273 @@
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", Roboto, system-ui, -apple-system, sans-serif;
+  background-color: #f5f7fb;
+  color: #1d2a3a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fb 0%, #ffffff 100%);
+}
+
+.app-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.screen {
+  width: min(960px, 100%);
+}
+
+.login-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 16px 32px rgba(15, 36, 90, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.login-card h1 {
+  margin: 0;
+  text-align: center;
+  color: #1d2a3a;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+}
+
+input,
+select,
+button {
+  font: inherit;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #cdd6f4;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus,
+button:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.primary-btn {
+  background: #4f46e5;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: #4338ca;
+}
+
+.secondary-btn {
+  background: #e0e7ff;
+  color: #312e81;
+  border: none;
+  cursor: pointer;
+}
+
+.secondary-btn:hover {
+  background: #c7d2fe;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(15, 36, 90, 0.08);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.app-header p {
+  margin: 0.25rem 0 0;
+  color: #4c5672;
+}
+
+.logo {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  border: 1px solid #d4d8e6;
+  background: #ffffff;
+  padding: 8px;
+  box-shadow: 0 4px 12px rgba(15, 36, 90, 0.08);
+}
+
+.controls {
+  margin-top: 1.75rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  align-items: end;
+}
+
+.controls label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+  color: #2f3c57;
+}
+
+.action-group {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin: 1.75rem 0 1.25rem;
+}
+
+.stat-card {
+  background: #ffffff;
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  box-shadow: inset 0 0 0 1px #e6ebfa;
+  font-weight: 600;
+  color: #1d2a3a;
+}
+
+.table-wrapper {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(15, 36, 90, 0.08);
+  overflow-x: auto;
+}
+
+#timesheet-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+}
+
+#timesheet-table th,
+#timesheet-table td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eef1fb;
+}
+
+#timesheet-table th {
+  font-weight: 700;
+  color: #27324f;
+  background: #f3f6ff;
+}
+
+#timesheet-table tbody tr:nth-child(even) {
+  background-color: #f9fbff;
+}
+
+#timesheet-table tbody tr:hover {
+  background: #eef2ff;
+}
+
+#timesheet-table th:nth-child(6),
+#timesheet-table td:nth-child(6) {
+  text-align: center;
+}
+
+.status-cell {
+  text-align: center;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.4rem 0.75rem;
+  display: inline-block;
+}
+
+.status-on-time {
+  background: #e0f7ec;
+  color: #046c4e;
+}
+
+.status-late {
+  background: #ffe8d6;
+  color: #b45309;
+}
+
+.status-absent {
+  background: #e4e7ec;
+  color: #3f3f46;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4);
+}
+
+.modal-content {
+  position: relative;
+  background: #ffffff;
+  padding: 1.75rem;
+  border-radius: 18px;
+  max-width: 360px;
+  width: calc(100% - 2rem);
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.3);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .action-group {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .controls {
+    grid-template-columns: 1fr;
+  }
+
+  .app-container {
+    padding: 1.5rem 1rem;
+  }
+}

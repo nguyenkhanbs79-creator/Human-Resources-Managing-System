@@ -1,0 +1,14 @@
+[
+  {"name":"Nguyễn Văn A","department":"IT","checkIn":"08:15","checkOut":"17:00"},
+  {"name":"Trần Thị B","department":"Kế toán","checkIn":"08:00","checkOut":"17:00"},
+  {"name":"Lê Quốc C","department":"Nhân sự","checkIn":"—","checkOut":"—"},
+  {"name":"Phạm Minh D","department":"IT","checkIn":"08:05","checkOut":"17:10"},
+  {"name":"Võ Thị E","department":"Kế toán","checkIn":"08:45","checkOut":"17:30"},
+  {"name":"Đặng Gia F","department":"Nhân sự","checkIn":"08:10","checkOut":"17:05"},
+  {"name":"Bùi Hữu G","department":"IT","checkIn":"09:00","checkOut":"18:00"},
+  {"name":"Phan Thị H","department":"Kế toán","checkIn":"08:25","checkOut":"17:05"},
+  {"name":"Dương Minh I","department":"Nhân sự","checkIn":"—","checkOut":"—"},
+  {"name":"Lý Quốc K","department":"IT","checkIn":"08:20","checkOut":"17:15"},
+  {"name":"Tạ Thu L","department":"Kế toán","checkIn":"08:50","checkOut":"17:40"},
+  {"name":"Ngô Nhật M","department":"Nhân sự","checkIn":"08:00","checkOut":"17:00"}
+]
